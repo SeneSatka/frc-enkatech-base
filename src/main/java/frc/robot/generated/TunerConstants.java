@@ -1,4 +1,4 @@
-package frc.robot.utils.Constants;
+package frc.robot.generated;
 
 import static edu.wpi.first.units.Units.*;
 
@@ -66,10 +66,12 @@ public class TunerConstants {
       new TalonFXConfiguration()
           .withCurrentLimits(
               new CurrentLimitsConfigs()
-                  // Swerve azimuth does not require much torque output, so we can set a
+                  // Swerve azimuth does not require much torque output, so we can
+                  // set a
                   // relatively
                   // low
-                  // stator current limit to help avoid brownouts without impacting performance.
+                  // stator current limit to help avoid brownouts without
+                  // impacting performance.
                   .withStatorCurrentLimit(Amps.of(60))
                   .withStatorCurrentLimitEnable(true));
   private static final CANcoderConfiguration encoderInitialConfigs = new CANcoderConfiguration();
