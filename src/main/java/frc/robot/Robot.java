@@ -20,6 +20,8 @@ import org.littletonrobotics.junction.networktables.NT4Publisher;
 import org.littletonrobotics.junction.wpilog.WPILOGReader;
 import org.littletonrobotics.junction.wpilog.WPILOGWriter;
 
+import frc.robot.utils.Checkers;
+
 public class Robot extends LoggedRobot {
   public Robot() {
     // Set up data receivers & replay source
@@ -48,6 +50,8 @@ public class Robot extends LoggedRobot {
     // Start AdvantageKit Logger - AdvantageKit Loglayıcısını başlatır.
     Logger.start();
 
+    // Check swerve configs - Swerve ayarlarını kontrol eder
+    Checkers.checkSwerveConfigures();
   }
 
 }
