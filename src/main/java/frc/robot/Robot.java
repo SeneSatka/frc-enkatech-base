@@ -36,7 +36,6 @@ public class Robot extends LoggedRobot {
 
   public Robot() {
     // Set up data receivers & replay source
-    // Veri alıcılarının ve yeniden oynatma kaynaklarının belirlenmesi
     switch (Constants.currentMode) {
       case REAL:
         // Running on a real robot, log to a USB stick ("/U/logs")
@@ -58,13 +57,13 @@ public class Robot extends LoggedRobot {
         break;
     }
 
-    // Start AdvantageKit Logger - AdvantageKit Loglayıcısını başlatır.
+    // Start AdvantageKit Logger
     Logger.start();
 
-    // Check swerve configs - Swerve ayarlarını kontrol eder
+    // Check swerve configs
     Checkers.checkSwerveConfigures();
 
-    // Auto Chooser for - Otonom için autoChooser
+    // Auto Chooser for Autonomous
     autoChooser = new LoggedDashboardChooser<>("Auto Choices", AutoBuilder.buildAutoChooser());
   }
 
@@ -86,8 +85,7 @@ public class Robot extends LoggedRobot {
 
   @Override
   public void autonomousInit() {
-    // AutonomousCommand get from autoChooser
-    // ShuffleBoard/SmartDashboard daki seçili olan otonom komut alınır.
+    // Get AutonomousCommand from autoChooser
 
     autonomousCommand = autoChooser.get();
 
@@ -108,7 +106,6 @@ public class Robot extends LoggedRobot {
     // continue until interrupted by another command, remove
     // this line or comment it out.
     if (autonomousCommand != null) {
-      // Teleopa geçilince otonom komutlarını durdurur.
       autonomousCommand.cancel();
     }
   }
