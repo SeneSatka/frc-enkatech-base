@@ -1,8 +1,8 @@
-package frc.robot;
+package frc.robot.util.constants;
 
 import edu.wpi.first.wpilibj.RobotBase;
 
-public final class Constants {
+public final class General {
   public static enum Mode {
     /** Running on a real robot. */
     REAL,
