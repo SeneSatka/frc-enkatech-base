@@ -24,6 +24,11 @@ public final class Constants {
 
   public static final class CanIds {}
 
+  public static final class Field {
+    public static final double FIELD_X_SIZE = 17.548249;
+    public static final double FIELD_Y_SIZE = 8.051800;
+  }
+
   public static final class Vision {
     // AprilTag Settings
     public static final AprilTagFields FieldType = AprilTagFields.k2025ReefscapeWelded;
