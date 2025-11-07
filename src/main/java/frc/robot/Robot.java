@@ -29,7 +29,8 @@ import org.littletonrobotics.junction.wpilog.WPILOGWriter;
 public class Robot extends LoggedRobot {
 
   private Command autonomousCommand;
-  public final SubSystems SubSystems;
+  private final SubSystems subSystems;
+  private RobotContainer robotContainer;
   // Dashboard inputs
   private final LoggedDashboardChooser<Command> autoChooser;
 
@@ -66,7 +67,8 @@ public class Robot extends LoggedRobot {
     autoChooser = new LoggedDashboardChooser<>("Auto Choices", AutoBuilder.buildAutoChooser());
 
     // Subsystems
-    this.SubSystems = new SubSystems();
+    this.subSystems = new SubSystems();
+    this.robotContainer = new RobotContainer(subSystems);
   }
 
   @Override
