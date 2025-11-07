@@ -15,6 +15,8 @@ package frc.robot.util;
 import com.ctre.phoenix6.swerve.SwerveModuleConstants;
 import com.ctre.phoenix6.swerve.SwerveModuleConstants.DriveMotorArrangement;
 import com.ctre.phoenix6.swerve.SwerveModuleConstants.SteerMotorArrangement;
+import edu.wpi.first.math.geometry.Translation2d;
+import frc.robot.Constants;
 import frc.robot.generated.TunerConstants;
 
 public final class Checkers {
@@ -33,5 +35,12 @@ public final class Checkers {
             "You are using an unsupported swerve configuration, which this template does not support without manual customization. The 2025 release of Phoenix supports some swerve configurations which were not available during 2025 beta testing, preventing any development and support from the AdvantageKit developers.");
       }
     }
+  }
+
+  public static boolean isInsideField(Translation2d translation2d) {
+    return translation2d.getX() > 0.0
+        && translation2d.getY() > 0.0
+        && translation2d.getX() < Constants.Field.FIELD_X_SIZE
+        && translation2d.getY() < Constants.Field.FIELD_Y_SIZE;
   }
 }
