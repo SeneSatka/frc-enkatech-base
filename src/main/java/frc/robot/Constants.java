@@ -5,6 +5,7 @@ import edu.wpi.first.math.geometry.Rotation3d;
 import edu.wpi.first.math.geometry.Transform3d;
 import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.wpilibj.RobotBase;
+import java.util.Set;
 
 public final class Constants {
   public static enum Mode {
@@ -24,7 +25,9 @@ public final class Constants {
   public static final class CanIds {}
 
   public static final class Vision {
+    // AprilTag Settings
     public static final AprilTagFields FieldType = AprilTagFields.k2025ReefscapeWelded;
+    public static final Set<Integer> ignoredTagIds = Set.of(4, 5, 14, 15);
 
     // Camera names
     public static final String FrontRightName = "Front Right";
