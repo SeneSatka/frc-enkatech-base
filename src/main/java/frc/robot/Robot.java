@@ -16,6 +16,7 @@ package frc.robot;
 import com.pathplanner.lib.auto.AutoBuilder;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.subsystems.SubSystems;
 import frc.robot.util.Checkers;
 import org.littletonrobotics.junction.LogFileUtil;
 import org.littletonrobotics.junction.LoggedRobot;
@@ -28,7 +29,7 @@ import org.littletonrobotics.junction.wpilog.WPILOGWriter;
 public class Robot extends LoggedRobot {
 
   private Command autonomousCommand;
-
+  public final SubSystems SubSystems;
   // Dashboard inputs
   private final LoggedDashboardChooser<Command> autoChooser;
 
@@ -63,6 +64,9 @@ public class Robot extends LoggedRobot {
 
     // Auto Chooser for Autonomous
     autoChooser = new LoggedDashboardChooser<>("Auto Choices", AutoBuilder.buildAutoChooser());
+
+    // Subsystems
+    this.SubSystems = new SubSystems();
   }
 
   @Override
